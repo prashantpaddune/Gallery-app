@@ -1,5 +1,5 @@
 import React from 'react';
-import { CategoryLabel, GalleryContainer, GalleryItem, Image,StyledHeading, FilterContainer } from './styles';
+import { CategoryLabel, GalleryContainer, GalleryItem, ClearButton, Image,StyledHeading, FilterContainer } from './styles';
 import ImageModal from '../../common/ImageModal';
 import useGetGalleryItem from "../../hooks/useGetGalleryItem";
 import Filters from "./Filters";
@@ -15,8 +15,11 @@ const Gallery = () => {
         setSortKey = () => {},
         filterCategory = '',
         setFilterCategory = () => {},
-        originalItems
+        originalItems,
+        isFilterOrSortApplied,
+        clearFilters
     } = useGetGalleryItem();
+
 
     return (
         <React.Fragment>
@@ -28,6 +31,8 @@ const Gallery = () => {
                     setFilterCategory={setFilterCategory}
                     setSortKey={setSortKey}
                     sortKey={sortKey}
+                    isFilterOrSortApplied={isFilterOrSortApplied}
+                    clearFilters={clearFilters}
                 />
             </FilterContainer>
 

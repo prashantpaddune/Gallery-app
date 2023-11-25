@@ -1,8 +1,7 @@
 import React from "react";
-import {Dropdown} from './styles'
+import { Dropdown, ClearButton } from './styles'
 
-const Filters = ({ items, sortKey, setSortKey, filterCategory, setFilterCategory }) => {
-
+const Filters = ({ items, sortKey, setSortKey, filterCategory, setFilterCategory, isFilterOrSortApplied, clearFilters  }) => {
     return (
         <div>
             <Dropdown value={sortKey} onChange={e => setSortKey(e.target.value)}>
@@ -17,6 +16,10 @@ const Filters = ({ items, sortKey, setSortKey, filterCategory, setFilterCategory
                     <option key={category} value={category}>{category}</option>
                 ))}
             </Dropdown>
+
+            {isFilterOrSortApplied && (
+                <ClearButton onClick={clearFilters}>Clear All</ClearButton>
+            )}
         </div>
     )
 }

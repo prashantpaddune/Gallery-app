@@ -49,6 +49,15 @@ const useGetGalleryItem = () => {
         }
     };
 
+    const isFilterOrSortApplied = sortKey !== '' || filterCategory !== '';
+
+    const clearFilters = () => {
+        setSortKey('');
+        setFilterCategory('');
+        localStorage.removeItem('sortKey');
+        localStorage.removeItem('filterCategory');
+    };
+
     return {
         items,
         originalItems: data,
@@ -60,6 +69,8 @@ const useGetGalleryItem = () => {
         setSortKey,
         setFilterCategory,
         filterCategory,
+        isFilterOrSortApplied,
+        clearFilters
     }
 }
 

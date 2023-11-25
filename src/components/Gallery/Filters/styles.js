@@ -18,3 +18,13 @@ export const Dropdown = styled.select`
         border-color: #555;
     }
 `;
+
+export const ClearButton = styled.button`
+    padding: 10px;
+    background: #cd2223;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+`;
