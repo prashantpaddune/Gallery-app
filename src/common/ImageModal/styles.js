@@ -26,7 +26,14 @@ const StyledImage = styled.img`
   height: 100%;
   display: block;
   object-fit: cover;
+  animation: fadeIn 0.5s ease;
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+    }
 `;
+
 
 const CloseButton = styled.button`
     position: absolute;
