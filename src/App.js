@@ -1,9 +1,13 @@
+import Gallery from "./components/Gallery";
+import React from "react";
+import { StyledHeading, Container } from "./styles";
 
 function App() {
   return (
-    <div className="App">
-      Gallery App
-    </div>
+    <Container>
+        <StyledHeading>Gallery</StyledHeading>
+        <Gallery />
+    </Container>
   );
 }
 
