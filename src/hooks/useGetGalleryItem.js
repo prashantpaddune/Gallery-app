@@ -58,7 +58,8 @@ const useGetGalleryItem = () => {
         navigate,
         sortKey,
         setSortKey,
-        setFilterCategory
+        setFilterCategory,
+        filterCategory,
     }
 }
 
