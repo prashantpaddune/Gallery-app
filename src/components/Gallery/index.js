@@ -1,7 +1,8 @@
 import React from 'react';
-import { CategoryLabel, GalleryContainer, GalleryItem, Image} from './styles';
+import { CategoryLabel, GalleryContainer, GalleryItem, Image,StyledHeading, FilterContainer } from './styles';
 import ImageModal from '../../common/ImageModal';
 import useGetGalleryItem from "../../hooks/useGetGalleryItem";
+import Filters from "./Filters";
 
 const Gallery = () => {
     const {
@@ -9,11 +10,27 @@ const Gallery = () => {
         closeModal = () => {},
         navigate = () => {},
         openModal = () => {},
-        selectedImage = null
+        selectedImage = null,
+        sortKey = '',
+        setSortKey = () => {},
+        filterCategory = '',
+        setFilterCategory = () => {},
+        originalItems
     } = useGetGalleryItem();
 
     return (
         <React.Fragment>
+            <FilterContainer>
+                <StyledHeading>Gallery</StyledHeading>
+                <Filters
+                    items={originalItems}
+                    filterCategory={filterCategory}
+                    setFilterCategory={setFilterCategory}
+                    setSortKey={setSortKey}
+                    sortKey={sortKey}
+                />
+            </FilterContainer>
+
             <GalleryContainer>
                 {items.map((item, index) => (
                     <GalleryItem key={item.id} onClick={() => openModal(item, index)}>

@@ -40,3 +40,14 @@ export const CategoryLabel = styled.div`
     padding: 5px 0;
     opacity: 0;
 `;
+
+export const StyledHeading = styled.h1`
+    margin: 20px 0;
+`;
+
+export const FilterContainer = styled.div`
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+    
+`
